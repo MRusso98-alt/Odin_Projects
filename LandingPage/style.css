@@ -1,0 +1,122 @@
+body{
+    font-family: Roboto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.top{
+    background-color: #1F2937;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.header{
+    flex: 1 1 auto;
+    padding: 10px;
+    font-size: 18px;
+    color: #E5E7EB;
+    display:flex;
+    justify-content: space-around;
+    outline: 2px solid red;
+}
+
+.left-links{
+    font-size: 24px;
+    color: #F9FAF8;
+    display: flex;
+    align-items: center;
+}
+
+.right-links{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.hero{
+    padding: 40px 0px 40px 0px;
+    flex: 1 1 auto;
+    outline: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.left{
+    flex: 0 1 450px;
+    outline: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.left h1{
+    font-size: 48px;
+    color: #F9FAF8;
+    flex: 0 1 auto;
+    outline: 2px solid red;
+    margin:10px 10px 5px 10px;
+}
+
+.left p{
+    flex: 0 1 auto;
+    font-size: 18px;
+    color: #E5E7EB;
+    outline: 2px solid red;
+    margin:5px 10px 5px 10px;
+}
+
+.left button{
+    flex: 0 0 auto;
+    font-family: inherit;
+    background-color: #3882F6;
+    color: #E5E7EB;
+    padding: 10px 20px 10px 20px;
+    font-weight: 500;
+    font-size: 18px;
+    outline: 2px solid red;
+    margin:5px 10px 10px 10px;
+    border-radius: 15px;
+}
+
+.information{
+    outline: 2px solid red; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  
+    align-items: center;
+}
+
+.information h2{
+    text-align: center;
+    font-size: 36px;
+    color: #1F2937;
+    font-weight: 900;
+}
+
+.images{
+    display: flex;
+    justify-content: center;
+    outline: 2px solid red; 
+    gap:20px;
+}
+
+.info{
+    flex: 0 1 auto;
+    max-width: 200px;
+}
+
+.header img{
+    flex: 0 1 auto;
+    outline: 2px solid red;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}

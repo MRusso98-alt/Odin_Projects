@@ -24,6 +24,12 @@ body{
     align-items: center;
 }
 
+.penultimate{
+    justify-content: flex-end;
+    gap: 92px;
+    padding-right: 25px;
+}
+
 .clickable{
     flex: 0 0 auto;
     width: 45px;
@@ -42,7 +48,6 @@ body{
 .reset, .point, .backspace{
     background-color: rgba(193, 115, 32, 0.6);
 }
-
 
 #calculator-text{
     align-self: stretch;

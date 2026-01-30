@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: black;
+    min-width: auto;
+    min-height: 100vh;
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.content{
+    flex: 1 1 auto;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 8fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+.content .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid grey;
+    gap: 40px;
+    padding-bottom: 5px;
+}
+
+.header h3{
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.header button{
+    width: 60px;
+    height: 30px;
+    flex: 0 0 auto;
+    border-radius: 25px;
+    background-color: rgba(25, 146, 212);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 0;
+}
+
+.content .gameboard{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 200px));
+    grid-template-rows: repeat(3, minmax(150px, 200px));
+    justify-content: center;
+    padding: 40px;
+    background-color: rgba(226, 232, 240);
+}
+
+.gameboard .boardspace{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.boardspace h4{
+    font-weight: bold;
+    font-size: 2.5rem;
+}

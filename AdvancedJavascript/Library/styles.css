@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    min-height: 100vh;
+    min-width: auto;
+    background-color: black;
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+}
+
+.header button{
+    width: 120px;
+    height: 50px;
+    flex: 0 0 auto;
+    border-radius: 25px;
+    background-color: rgba(25, 146, 212);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 0;
+}
+
+.content{
+    background-color: rgba(226, 232, 240);
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+}
+
+.content h3{
+    flex: 1 0 auto;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.content .book-container{
+    background-color: white;
+    flex: 7 1 auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px rgba(221, 226, 232);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.book{
+    background-color: bisque;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+}
+
+.book img{
+    flex: 2 1 auto;
+    max-width: max(200px, 100%);
+    max-height: max(200px, 100%);
+    border-bottom: 2px solid gray;
+}
+
+.book .book-info{
+    flex: 1 1 auto;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.book-info h3{
+    flex: 0 1 auto;
+    font-size: 1rem;
+}
+
+.book .buttons{
+    flex: 1 1 auto;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    align-items: center;    
+}
+
+.buttons button{
+    width: 120px;
+    height: 40px;
+    flex: 0 1 auto;
+    border-radius: 25px;
+    background-color: rgba(25, 146, 212);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 0;
+}
+
+dialog{
+    position: fixed;
+    left: 40%;
+    top: 20%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(226, 232, 240);
+}
+
+dialog form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: fl;
+    gap:20px;
+}
+
+form .label-input{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    flex: 1 1 auto;
+    align-items: center;
+    gap: 10px;
+}
+
+form button{
+    width: 80px;
+    height: 30px;
+    flex: 0 0 auto;
+    border-radius: 25px;
+    background-color: rgba(25, 146, 212);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 0;
+    align-self: flex-end;
+}

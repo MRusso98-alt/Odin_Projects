@@ -44,6 +44,12 @@ nav button{
     font-weight: bold;
 }
 
+nav #home-button{
+    background-color: #ECA43B;
+}
+
+/*---------------------------------------*/
+
 footer{
     justify-content: space-around;
     align-items: center;
@@ -56,6 +62,8 @@ footer a{
     text-decoration: none;
     color: black;
 }
+
+/*---------------------------------------*/
 
 main{
     background-image: url("./images/643.png");
@@ -74,4 +82,89 @@ main #content{
     background-color: #FFDE73;
     grid-area: content;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+/*---------------------------------------*/
+/*Home page*/
+
+#content .title{
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #FFC60B;
+    border: 10px solid #C16A08;
+    position: relative;
+    padding: 10px 40px 10px 40px;
+}
+
+#content .title::before{
+    position: absolute;
+    left: -15px;
+    content: '';
+    display: block;
+    background:url("./images/bee.svg");
+    width: 50px;
+    height: 50px;
+}
+
+#content .title::after{
+    transform: rotate(0.75turn);
+    position: absolute;
+    right: -15px;
+    content: '';
+    display: block;
+    background:url("./images/bee.svg");
+    width: 50px;
+    height: 50px;
+}
+
+#content .title p{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+#content .review{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #FFC60B;
+    border: 10px solid #C16A08;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.review .review-text:after{
+    transform: rotate(0.45turn);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    content: '';
+    display: block;
+    background:url("./images/bee.svg");
+    width: 50px;
+    height: 50px;
+}
+
+.review p{
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.review .review-author{
+    text-align: right;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/*---------------------------------------*/
+/*Menu page*/
+
+/*---------------------------------------*/
+/*Contacts page*/

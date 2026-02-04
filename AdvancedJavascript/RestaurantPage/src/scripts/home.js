@@ -41,11 +41,37 @@ function generateHours(){
     
     const hours = document.createElement("div");
     hours.setAttribute("class", "hours");
+    const text = document.createElement("p");
+    text.textContent = "Hours";
+    text.setAttribute("class", "hours-title");
+    const days = document.createElement("p");
+    days.setAttribute("class", "hours-days");
+    days.textContent = "Sunday: 8am - 8pm\n Monday: 6am - 6pm\n Tuesday: 6am - 6pm\n Wednesday: 6am - 6pm\n" +
+                        "Thursday: 6am - 10pm\n Friday: 6am - 10pm\n Saturday: 8am - 10pm\n";
+    hours.appendChild(text);
+    hours.appendChild(days);
+    content.appendChild(hours);
 }
 
+function generateLocation(){
+    const content = document.querySelector("#content");
+    
+    const location = document.createElement("div");
+    location.setAttribute("class", "location");
+    const locationText = document.createElement("p");
+    locationText.textContent = "Location";
+    locationText.setAttribute("class", "location-title");
+    const place = document.createElement("p");
+    place.setAttribute("class", "place");
+    place.textContent = "123 Forest Drive, Forestville, Maine";
+    location.appendChild(locationText);
+    location.appendChild(place);
+    content.appendChild(location);
+}
 export function renderHomePage(){
     emptyPage();
     generateTitle();
     generateReview();
     generateHours();
+    generateLocation();
 };

@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    min-height: 100vh;
+    min-width: auto;
+    background-color: black;
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+}
+
+.header button{
+    width: 50px;
+    height: 50px;
+    flex: 0 0 auto;
+    border-radius: 50px;
+    background-color: rgba(25, 146, 212);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: 0;
+}
+
+/*----------------*/
+
+.content{
+    background-color: rgba(226, 232, 240);
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+}
+
+.content h3{
+    flex: 1 0 auto;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/*----------------*/
+
+.content .projects-container{
+    background-color: white;
+    flex: 7 1 auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px rgba(221, 226, 232);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+/*----------------*/
+
+.projects-container .single-project{
+    background-color: blanchedalmond;
+    border-radius: 15px;
+    box-shadow: 5px 5px rgba(162, 162, 162, 0.3);
+    display: grid;
+    grid-template-rows: 0.5fr 4fr 1fr;
+}
+
+.single-project .project-header{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-project .list-of-tasks{
+    list-style-position: inside;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
+    overflow-y: auto;
+}
+
+.list-of-tasks li{
+    margin: 30px;
+    display: flex;
+    border-radius: 15px;
+}
+
+.list-of-tasks .title{
+    flex: 3 1 auto;
+    justify-self: flex-start;
+}
+
+.list-of-tasks .due-date{
+    flex: 2 1 auto;
+}
+
+.list-of-tasks .priority-lvl{
+    flex: 1 1 auto;
+    justify-self: flex-end;
+}
+
+.list-of-tasks li:not(:last-child){
+    border-bottom: 2px solid black;
+}
+
+.single-project .project-footer{
+    padding: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: orange;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

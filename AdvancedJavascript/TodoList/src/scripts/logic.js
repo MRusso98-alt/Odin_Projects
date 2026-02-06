@@ -5,6 +5,7 @@ export class toDo{
     #priority;
     #notes;
     #isComplete;
+    #id;
 
     constructor(title, description, dueDate, priority){
         this.title = title;
@@ -12,6 +13,7 @@ export class toDo{
         this.dueDate = dueDate;
         this.priority = priority;
         this.isComplete = false;
+        this.id = crypto.randomUUID();
     }
 
     addNotes(notes){
@@ -41,18 +43,24 @@ export class toDo{
     getCompleteStatus(){
         return this.isComplete;
     }
+    
+    getId(){
+        return this.id;
+    }
 };
 
 export class Project{
     #todos;
     #name;
+    #id;
 
     constructor(name = "My Project"){
         this.todos = [];
         this.name = name;
+        this.id = crypto.randomUUID();
     }
 
-    addtodo(todo) {
+    addTodo(todo) {
         this.todos.push(todo);
     }
 
@@ -62,5 +70,9 @@ export class Project{
 
     getName(){
         return this.name;
+    }
+
+    getId(){
+        return this.id;
     }
 }

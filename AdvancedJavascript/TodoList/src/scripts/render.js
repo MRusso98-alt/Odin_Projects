@@ -1,6 +1,6 @@
 import { toDo, Project } from "./logic.js";
 import {listOfProjects} from "../index.js";
-import { handleAddTask, handleChangeTitle } from "./events.js";
+import { handleAddTask, handleChangeTitle, handleDeleteTask, handleSetComplete } from "./events.js";
 
 function emptyPage(){
     const content = document.querySelector(".projects-container");
@@ -30,7 +30,7 @@ function colorBasedOnPriority(task, priority){
     if(priority === "2") task.setAttribute("style", "background-color: #90d5355d;");
     else if (priority === "3") task.setAttribute("style", "background-color: #d2d53557;");
     else if (priority === "4") task.setAttribute("style", "background-color: #eaa524;");
-    else if (priority === "5") task.setAttribute("style", "background-color: #ea5224;");
+    else if (priority === "5") task.setAttribute("style", "background-color: #76260e;");
 }
 
 function renderOneTodo(element){
@@ -47,11 +47,22 @@ function renderOneTodo(element){
     const deleteButton = document.createElement("button");
     deleteButton.setAttribute("class", "erase-task");
     deleteButton.textContent = "X";
+    const setComplete = document.createElement("button");
+    setComplete.setAttribute("class", "complete-task");
+    setComplete.textContent = "!";
     task.setAttribute("id", element.getId());
     task.appendChild(text);
     task.appendChild(date);
     task.appendChild(priority);
     task.appendChild(deleteButton);
+    task.appendChild(setComplete);
+
+    if(element.getCompleteStatus()){
+        task.setAttribute("class", "completed-task");
+    }
+
+    handleDeleteTask(deleteButton);
+    handleSetComplete(setComplete);
     colorBasedOnPriority(task, priority.textContent);
     return task;
 }
@@ -72,7 +83,7 @@ function createProjectFooter(project, container){
     const footer = document.createElement("div");
     footer.setAttribute("class", "project-footer");
     const text = document.createElement("div");
-    text.textContent = "Tasks to complete: " + project.getTodos().length;
+    text.textContent = "Tasks to complete: " + project.tasksToComplete();
     footer.appendChild(text);
     const addTask = document.createElement("button");
     addTask.textContent = "Add task";
@@ -94,4 +105,5 @@ export function renderAllProjects(){
     listOfProjects.forEach(element => {
         renderProject(element);
     });
+    localStorage.setItem("projects", JSON.stringify(listOfProjects));
 }

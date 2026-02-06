@@ -47,6 +47,10 @@ export class toDo{
     getId(){
         return this.id;
     }
+
+    setComplete(){
+        this.isComplete = true;
+    }
 };
 
 export class Project{
@@ -74,5 +78,13 @@ export class Project{
 
     getId(){
         return this.id;
+    }
+
+    tasksToComplete(){
+        let accumulator = 0;
+        this.todos.forEach(element => {
+            if(!element.getCompleteStatus()) accumulator++;
+        });
+        return accumulator;
     }
 }

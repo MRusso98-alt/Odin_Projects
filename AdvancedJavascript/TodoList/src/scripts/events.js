@@ -77,3 +77,51 @@ export function handleChangeTitle(container){
         title.removeAttribute("contenteditable");
     });
 }
+
+function deleteTask(event){
+    let taskid = event.target.parentNode.getAttribute("id");
+    let projectid = event.target.parentNode.parentNode.parentNode.getAttribute("id");
+    console.log(taskid);
+    console.log(projectid);
+    listOfProjects.forEach(element => {
+        if(element.getId() === projectid){
+            const tasks = element.getTodos();
+            for(let i = 0; i < tasks.length; i++){
+                if(tasks[i].getId() === taskid){
+                    console.log("YEAHHH");
+                    tasks.splice(i, 1);
+                }
+            }
+        }
+    });
+    renderAllProjects();
+}
+
+export function handleDeleteTask(button){
+    button.addEventListener("click", function(e){
+        deleteTask(e);
+    });
+}
+
+function setComplete(e){
+    let taskid = event.target.parentNode.getAttribute("id");
+    let projectid = event.target.parentNode.parentNode.parentNode.getAttribute("id");
+
+    listOfProjects.forEach(element => {
+        if(element.getId() === projectid){
+            element.getTodos().forEach(task => {
+                if(task.getId() === taskid){
+                    task.setComplete();
+                    console.log("YEAHHH");
+                }
+            });
+        }
+    });
+    renderAllProjects();
+}
+
+export function handleSetComplete(button){
+    button.addEventListener("click", function(e){
+        setComplete(e);
+    });
+}

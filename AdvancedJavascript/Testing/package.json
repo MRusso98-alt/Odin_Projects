@@ -1,0 +1,13 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Diana Russo",
+  "type": "commonjs",
+  "main": "base.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  }
+}

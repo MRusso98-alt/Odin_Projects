@@ -27,7 +27,7 @@ class Node{
 class LinkedList{
     head;
     
-    constructor(){
+    constructor(key, value){
         this.head = new Node(null, null);
     }
 
@@ -152,6 +152,7 @@ class LinkedList{
             node.setNext(node.getNext().getNext());
         }
     }
+    
     toString(){
         let node = this.head;
         let string = "";

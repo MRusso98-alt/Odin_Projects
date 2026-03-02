@@ -1,0 +1,341 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+/*---------------------*/
+
+header{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.blue-background{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #0890b27e;
+    /* a rectangle with the bottom-right corner cut off */
+    clip-path: polygon(
+        0% 0%,      /* top-left */
+        100% 0%,    /* top-right */
+        100% 50%,   /* move down but not all the way */
+        0% 100%,   /* inset from bottom-right */
+        0% 100%     /* bottom-left */
+    );
+}
+
+.profile{
+    flex: 1 1 auto;
+    position: relative;
+    margin: 20px 20px 10px 20px;
+}
+
+.profile img{
+    max-width: 100%;
+    object-fit: cover;
+    box-shadow: 1px 1px gray;
+}
+
+.name{
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: white;
+    font-size: 1.5rem;
+    font-family: Playfair Display, sans-serif;
+}
+
+.name p{
+    margin: 0;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px 10px 10px;
+}
+
+.about p{
+    flex: 1 1 auto;
+    font-family: Roboto, sans-serif;
+    color: grey;
+    margin: 0;
+}
+
+.top-text{
+    flex: 1 1 auto;
+    font-family: Playfair Display, sans-serif;
+    font-size: 1.4rem;
+    color: black;
+    align-self: center;
+    font-weight: 600;
+    margin: 10px 0px 15px 0px;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.links img{
+    max-width: 25px;
+}
+
+@media(min-width: 500px) and (max-width: 1000px){
+    header{
+        min-height: 500px;
+    }
+
+    .profile img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        flex: 1 1 auto;
+        width: 40vw;
+        max-width: 500px;
+        aspect-ratio: 6 / 5;
+        object-fit: cover;
+        box-shadow: 1px 1px gray;
+        z-index: 1;
+    }
+
+    .name{
+        margin: 0;
+        top: 10px;
+        left: 30vw;     /* reset */
+        bottom: auto;   /* reset */
+        font-size: 2.5rem;
+        z-index: 2;
+    }
+
+    .about {
+        display: block;   /* not flex */
+        position: absolute;
+        background: white;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+
+        left: 5%;
+        width: 80%;
+        padding: 40px;
+        top: 25%;
+        z-index: 0;
+    }
+
+    .about p{
+        text-align: left;
+        font-size: 1.4rem;
+    }
+
+    .about .top-text{
+        color: black;
+        font-size: 1.6rem;
+        font-family: Playfair Display, sans-serif;
+    }
+
+    .about::before{
+        content: "";
+        float: left;
+
+        width: 35vw;
+        max-width: 500px;
+
+        height: calc(15vw * 6 / 5); /* match image height */
+
+        shape-outside: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+    }
+
+    .about .links{
+        justify-content: flex-end;
+    }
+}
+
+@media(min-width: 1000px){
+    header{
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        padding-right: 20px;
+    }
+
+    header .blue-background{
+        height: 80%;
+        z-index: -1;
+    }
+
+    header .profile{
+        margin-right: 0;
+    }
+
+    header .about{
+        background-color: white;
+        z-index: 0;
+        margin-left: 0;
+        height: auto;
+        align-self: center;
+        padding: 10px;
+        gap: 10px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .about .top-text{
+        color: black;
+        font-size: 1.6rem;
+        font-family: Playfair Display, sans-serif;
+        align-self: flex-start;
+    }
+
+    .about .links{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/*---------------------*/
+
+main{
+    flex: 1;
+    padding: 30px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.projects-top-text{
+    flex: 1 1 auto;
+    font-family: Playfair Display, sans-serif;
+    font-size: 1.4rem;
+    color: black;
+    align-self: center;
+    font-weight: 600;
+}
+
+.projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: minmax(400px, 1fr);
+    gap: 30px;
+    padding: 0px 10px 0px 10px;
+}
+
+.single-project{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.single-project .screenshot{
+    flex: 3 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-project .screenshot p{
+    color: white;
+    text-align: center;
+    font-family: Playfair Display, sans-serif;
+    font-size: 2.3rem;
+}
+
+.single-project .single-project-text{
+    flex: 2 1 auto;
+    padding: 10px 20px 0px 20px;
+}
+
+.single-project-text .name-link{
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-link p{
+    margin: 0;
+    font-family: Playfair Display, sans-serif;
+    font-size: 1.3rem;
+}
+
+.single-project-text .bottom-text{
+    font-family: Roboto, sans-serif;
+    color: grey;
+}
+
+.name-link img{
+    max-width: 25px;
+}
+
+/*---------------------*/
+
+footer{
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 50px;
+}
+
+footer .footer-text{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    background-color: #0891B2;
+    padding: 20px;
+    font-family: Roboto, sans-serif;
+}
+
+.footer-text p{
+    margin: 0;
+}
+
+.footer-text .contact{
+    text-align: center;
+    font-family: Playfair Display, sans-serif;
+    font-size: 3rem;
+}
+
+.footer-text .larger-text{
+    font-size: 1.5rem;
+}
+
+.footer-picture{
+    background-image: url("img/pexels-olly-733872.jpg");
+    background-size: cover;
+}
+
+@media(min-width: 500px) and (max-width: 1000px){
+    footer{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media(min-width: 1001px){
+    footer{
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+    }
+}

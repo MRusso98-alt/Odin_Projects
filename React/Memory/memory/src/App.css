@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root{
+  width: 100%;
+  min-height: 100vh;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 20px 20px;
+}
+
+.text-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  gap: 10px;
+}
+
+.scoreboard{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  gap: 10px;
+}
+
+.gamecards{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 20px 0px 20px;
+}
+
+.card{
+  border-radius: 15px;
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(238, 130, 238, 0.5);
+
+  padding: 10px;
+}
+
+
